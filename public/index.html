@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+
+    <meta charset="utf-8">
+    <base href="/">
+    <title>MEAN Application</title>
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/components-font-awesome/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/angular-toastr/dist/angular-toastr.css">
+    <link rel="stylesheet" href="css/main.css">
+
+
+    <body ng-app="App">
+        <nav class="navbar navbar-inverse" role="navigation">
+            <ul class="nav navbar-nav pull-right">
+                <li class="pull-left"><a ui-sref="registration" href="#" ng-show="!currentUser">Registration</a></li>
+                <li class="pull-left"><a ui-sref="login" href="#" ng-show="!currentUser">Login</a></li>
+                <li><a href="#" ui-sref="logout" ng-show="currentUser">Logout</a></li>
+            </ul>
+        </nav>
+        <div class="container">
+            <div ui-view></div>
+        </div>
+        <script src="bower_components/jquery/dist/jquery.js" charset="utf-8"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js" charset="utf-8"></script>
+        <script src="bower_components/angular/angular.js" charset="utf-8"></script>
+        <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="bower_components/angular-toastr/dist/angular-toastr.js"></script>
+        <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
+        <script src="bower_components/angular-modal-service/dst/angular-modal-service.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/angularRoutes/routes.js"></script>
+        <script src="js/controllers/mainController.js"></script>
+        <script src="js/controllers/loginController.js"></script>
+        <script src="js/controllers/pageController.js"></script>
+        <script src="js/services/apiServices.js"></script>
+    </body>
+
+</html>

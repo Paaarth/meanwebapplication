@@ -1,0 +1,48 @@
+<div class="modal fade">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" ng-click="close('Cancel')" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">{{PageName}}</h4>
+            </div>
+            <div class="modal-body">
+                <form name="addNewPageForm" id="addNewPageForm" ng-submit="addNewPageForm.$valid && submitForm()" novalidate>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group" ng-class="{ 'has-error' : addNewPageForm.name.$invalid && !addNewPageForm.name.$pristine }">
+                                <label for="name">Name <span class="text-danger"><b>*</b></span></label>
+                                <input type="text" placeholder="Enter name" class="form-control" name="name" id="name" ng-model="page.name" required="true">
+                                <span class="text-danger" ng-show="addNewPageForm.$submitted && addNewPageForm.name.$error.required"><b>Please enter valid name !</b></span>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : addNewPageForm.companyname.$invalid && !addNewPageForm.companyname.$pristine }">
+                                <label for="companyname">Company Name <span class="text-danger"><b>*</b></span></label>
+                                <input type="text" placeholder="Enter companyname" class="form-control" name="companyname" id="companyname" ng-model="page.companyname" required="true">
+                                <span class="text-danger" ng-show="addNewPageForm.$submitted && addNewPageForm.companyname.$error.required"><b>Please enter valid companyname !</b></span>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : addNewPageForm.email.$invalid && !addNewPageForm.email.$pristine }">
+                                <label for="email">Email <span class="text-danger"><b>*</b></span></label>
+                                <input type="email" placeholder="Enter email address" class="form-control" id="email" name="email" ng-model="page.email" required="true">
+                                <span class="text-danger" ng-show="addNewPageForm.$submitted && addNewPageForm.email.$error.required"><b>Please enter valid email !</b></span>
+                                <p class="text-danger" ng-show="addNewPageForm.$submitted && addNewPageForm.email.$error.email"><b>Invalid email !</b></p>
+                                <p class="text-danger" ng-show="addNewPageForm.email.$invalid && !addNewPageForm.email.$pristine"><b>Please enter valid email !</b></p>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : addNewPageForm.skype.$invalid && !addNewPageForm.skype.$pristine }">
+                                <label for="skype">Skype <span class="text-danger"><b>*</b></span></label>
+                                <input type="text" placeholder="Enter skype" class="form-control" id="skype" name="skype" ng-model="page.skype" required="true">
+                                <span class="text-danger" ng-show="addNewPageForm.$submitted && addNewPageForm.skype.$error.required"><b>Please enter valid skype !</b></span>
+                            </div>
+                            <div class="form-group" ng-class="{ 'has-error' : addNewPageForm.phone.$invalid && !addNewPageForm.phone.$pristine }">
+                                <label for="phone">Phone <span class="text-danger"><b>*</b></span></label>
+                                <input type="tel" placeholder="Enter phone" class="form-control" id="phone" name="phone" ng-model="page.phone" required="true">
+                                <span class="text-danger" ng-show="addNewPageForm.$submitted && addNewPageForm.phone.$error.required"><b>Please enter valid phone-number !</b></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success pull-right">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

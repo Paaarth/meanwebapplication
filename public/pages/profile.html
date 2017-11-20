@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <label class="control-label">Hello, {{currentUser.local.email}} !</label>
+        </div>
+    </div>
+    <div class="bg-light lter b-b wrapper-md">
+        <h1 class="m-n font-thin h3">Add New Page</h1>
+    </div>
+    <div class="wrapper-md" style="min-height:78vh;" ng-controller="listPageController">
+        <button class="btn btn-default" ng-click="addNewPage()">Add New Page</button>
+        <br>
+        <br>
+        <div class="panel panel-default" data-ng-init="listPages()">
+            <div class="panel-heading">
+                Add New Page
+            </div>
+            <div>
+                <div class="table-responsive">
+                    <table class="table table-bordered table-hover table-condensed bg-white-only table-striped m-b-none">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Company</th>
+                                <th>Email</th>
+                                <th>Skype</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-if="Pages.length > '0'" ng-repeat="Page in Pages">
+                                <td>{{Page.name}}</td>
+                                <td>{{Page.companyname}}</td>
+                                <td>{{Page.email}}</td>
+                                <td>{{Page.skype}}</td>
+                                <td>{{Page.phone}}</td>
+                                <td>
+                                    <button class="btn m-b-xs w-xs btn-primary" ng-click="editPage(Page)">Edit</button>
+                                    <button class="btn m-b-xs w-xs btn-danger" ng-click="deletePage(Page)">Delete</button>
+                                </td>
+                            </tr>
+                            <tr ng-if="Pages.length === 0">
+                                <td>No record found</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
